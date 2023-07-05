@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Banco de los Amigos</title>
+  <link rel="stylesheet" href="stylecajero.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Cajero <span class="accent-color">Banco de los Amigos</span></h1>
+    <div id="accountSelection" class="section">
+      <p class="section-heading">Seleccione una cuenta:</p>
+      <button onclick="selectAccount(0)">Persona 1</button>
+      <button onclick="selectAccount(1)">Persona 2</button>
+      <button onclick="selectAccount(2)">Persona 3</button>
+    </div>
+    <div id="passwordInput" class="section" style="display: none;">
+      <p class="section-heading">Ingrese la contraseña de la cuenta:</p>
+      <input type="password" id="passwordField">
+      <button onclick="verifyPassword()">Ingresar</button>
+      <p id="passwordError" class="error" style="display: none;">Contraseña incorrecta. Intente nuevamente.</p>
+    </div>
+    <div id="options" class="section" style="display: none;">
+      <p class="section-heading">Seleccione una opción:</p>
+      <button onclick="showBalance()">Consultar saldo</button>
+      <button onclick="showDepositForm()">Ingresar monto</button>
+      <button onclick="showWithdrawalForm()">Retirar monto</button>
+      <button onclick="resetApp()">Seleccionar otra cuenta</button>
+    </div>
+    <div id="balance" class="section" style="display: none;">
+      <p id="balanceAmount" class="balance-amount"></p>
+      <button onclick="backToOptions()">Volver</button>
+    </div>
+    <div id="depositForm" class="section" style="display: none;">
+      <p class="section-heading">Ingrese el monto a ingresar:</p>
+      <input type="number" id="depositAmount" min="1" max="990">
+      <button onclick="deposit()">Ingresar</button>
+      <button onclick="backToOptions()">Cancelar</button>
+    </div>
+    <div id="withdrawalForm" class="section" style="display: none;">
+      <p class="section-heading">Ingrese el monto a retirar:</p>
+      <input type="number" id="withdrawalAmount" min="10" max="200">
+      <button onclick="withdraw()">Retirar</button>
+      <button onclick="backToOptions()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="Cajerojava.js"></script>
+</body>
+</html>
